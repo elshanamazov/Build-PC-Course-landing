@@ -1,0 +1,54 @@
+.btn {
+  font-family: var(--font-family);
+  display: block;
+  border: 0;
+  padding: 10px 30px;
+  border-radius: 50px;
+  min-width: 180px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--light-color);
+  transition: text-shadow 0.2s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    text-shadow: 0 0 0.65px var(--light-color), 0 0 0.65px var(--light-color);
+  }
+
+  @media (max-width: 960px) {
+    padding: 10px 20px;
+    min-width: 170px;
+  }
+
+  @media (max-width: var(--mobileSmall)) {
+    font-size: 14px;
+    min-width: 160px;
+  }
+}
+
+.header__btn {
+  @media (max-width: 960px) {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
+
+.btn--primary {
+  background: linear-gradient(94.26deg, #c89afc 9.51%, #7c6afa 90.23%);
+  font-weight: 400;
+  transition: background 0.2s ease-in;
+  &:hover {
+    background: linear-gradient(270deg, #c89afc 9.51%, #7c6afa 90.23%);
+  }
+}
+
+.btn--secondary {
+  background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+  font-weight: 700;
+  transition: background 0.2s ease-in;
+  &:hover {
+    background: linear-gradient(270deg, #df5950 11.19%, #451046 93.72%);
+    // transition: background .2s ease-in;
+  }
+}

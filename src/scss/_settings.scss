@@ -10,7 +10,7 @@ html {
 
 html {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -19,6 +19,7 @@ body {
   min-width: 320px;
   min-height: 100%;
   font-size: 16px;
+  background: #000 url(../img/patern.svg) top left;
 }
 
 img {
@@ -31,11 +32,43 @@ a {
   text-decoration: none;
 }
 
+.body--lock {
+  overflow: hidden;
+}
+
 .container {
-  max-width: ($containerWidth + $containerPadding) + px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 $containerSidePadding + px;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+
+  @media (max-width: 960px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.title {
+  max-width: 920px;
+  font-family: var(--font-family);
+  font-size: 64px;
+  line-height: 88px;
+  color: var(--light-color);
+
+  @media (max-width: 960px) {
+    font-size: 45px;
+    line-height: 60px;
+  }
+
+  @media (max-width: 760px) {
+    font-size: 34px;
+    line-height: 48px;
+  }
+
+  @media (max-width: 760pxsmall) {
+    font-size: 28px;
+    line-height: 42px;
+  }
 }
 
 .site-container {
