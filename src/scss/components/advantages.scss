@@ -4,11 +4,11 @@
     padding-top: 110px;
   }
 
-  @media (max-width: var(--mobile)) {
+  @media (max-width: 760px) {
     padding-top: 90px;
   }
 
-  @media (max-width: var(--mobileSmall)) {
+  @media (max-width: 425px) {
     padding-top: 60px;
   }
 
@@ -17,24 +17,22 @@
     color: var(--light-color);
     font-weight: 700;
     font-size: 48px;
-    line-height: 60px;
+    line-height: 1.3;
     text-align: center;
     margin-bottom: 115px;
 
     @media (max-width: 960px) {
       font-size: 32px;
-      line-height: 44px;
       margin-bottom: 90px;
     }
 
-    @media (max-width: var(--mobile)) {
+    @media (max-width: 760px) {
       margin-bottom: 80px;
       text-align: left;
     }
 
-    @media (max-width: var(--mobileSmall)) {
+    @media (max-width: 425px) {
       font-size: 28px;
-      line-height: 36px;
       margin-bottom: 70px;
     }
   }
@@ -42,7 +40,7 @@
   &__box {
     display: flex;
     justify-content: space-between;
-    @media (max-width: var(--mobile)) {
+    @media (max-width: 760px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -61,7 +59,7 @@
       margin-right: 0;
     }
 
-    @media (max-width: var(--mobile)) {
+    @media (max-width: 760px) {
       margin-right: 0;
       display: flex;
       flex-wrap: wrap;
@@ -74,7 +72,7 @@
       }
     }
 
-    @media (max-width: var(--mobileSmall)) {
+    @media (max-width: 425px) {
       padding-left: 50px;
     }
 
@@ -84,7 +82,7 @@
       margin: 0 auto;
       margin-bottom: 60px;
 
-      @media (max-width: var(--mobile)) {
+      @media (max-width: 760px) {
         position: absolute;
         left: 0;
         top: 0;
@@ -93,7 +91,7 @@
         height: 50px;
       }
 
-      @media (max-width: var(--mobileSmall)) {
+      @media (max-width: 425px) {
         position: absolute;
         left: 0;
         top: 0;
@@ -108,21 +106,20 @@
       color: var(--light-color);
       font-weight: 500;
       font-size: 24px;
-      line-height: 34px;
+      line-height: 1.2;
       margin-bottom: 30px;
 
       @media (max-width: 960px) {
         font-size: 21px;
-        line-height: 28px;
       }
     }
 
     &-desc {
       font-family: var(--font-family);
-      color: var(--light-color)-opacity;
+      color: var(--light-color-opacity);
       font-size: 14px;
       font-weight: 400;
-      line-height: 25px;
+      line-height: 1.2;
       max-width: 358px;
       margin: 0 auto;
     }

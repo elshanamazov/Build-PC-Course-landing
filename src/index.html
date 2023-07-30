@@ -2,21 +2,23 @@
 <html lang="en">
   @include('partials/head.html')
 
-  <body>
+  <body class="js-body">
     <div class="site-container">
       @include('partials/header.html')
       <main class="main">
-        <section class="about">
+        <section class="about" id="about">
           <div class="container">
             <div class="about__wrap">
-              <img
-                src="img/about__img.png"
-                loading="lazy"
-                width="526"
-                height="542"
-                alt="Системный блок"
-                class="about__img"
-              />
+              <div class="about__imgwrap">
+                <img
+                  src="./img/about__img.png"
+                  loading="lazy"
+                  width="526"
+                  height="542"
+                  alt="Системный блок"
+                  class="img__"
+                />
+              </div>
               <div class="about__info">
                 <h2 class="about__title title">Чем мы занимаемся?</h2>
                 <p class="about__text">
@@ -243,7 +245,7 @@
           </div>
         </section>
 
-        <section class="program">
+        <section class="program" id="program">
           <div class="container">
             <h2 class="program__title">Программа обучения</h2>
             <p class="program__desc">
@@ -319,7 +321,7 @@
           </div>
         </section>
 
-        <section class="teachers">
+        <section class="teachers" id="teachers">
           <div class="container">
             <h2 class="teachers__title">Ваши преподаватели</h2>
             <div class="teachers__wrap">
