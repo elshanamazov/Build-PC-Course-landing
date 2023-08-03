@@ -1,28 +1,34 @@
-name: Deploy with Gulp
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Замените на вашу ветку, на которой вы хотите запускать деплоймент
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 18 # Укажите версию Node.js, которая подходит для вашего проекта
+          node-version: 18
+
+      - name: Install Gulp CLI
+        run: npm install -g gulp-cli
 
       - name: Install project dependencies
-        run: npm install # Используйте npm или yarn в зависимости от вашего проекта
+        run: npm install
 
-      - name: Build project with Gulp
-        run: npx gulp build # Замените "build" на имя вашей задачи Gulp, которая выполняет сборку проекта
+      - name: Build with Gulp
+        run: gulp build # Замените на команду Gulp, которая собирает ваш проект
 
-      # В этом шаге вы можете добавить дополнительные команды для деплоя на ваш сервер или хостинг-провайдер
-      # Например, если вы используете SSH для деплоя на сервер, убедитесь, что у вас есть правильные секреты в настройках репозитория
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./app # Замените на путь к собранному проекту
+          publish_branch: gh-pages # Замените на ветку, в которую будет производиться деплой
+          enable_jekyll: false # Установите в true, если используете Jekyll в вашем проекте
