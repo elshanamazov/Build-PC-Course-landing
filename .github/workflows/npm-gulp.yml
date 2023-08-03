@@ -25,7 +25,6 @@ jobs:
         run: gulp build # Замените на ваш таск для сборки проекта
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: ./app/index.html # Путь к каталогу, содержащему собранные файлы (измените, если требуется)
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install -g gh-pages
+          gh-pages -d dist
