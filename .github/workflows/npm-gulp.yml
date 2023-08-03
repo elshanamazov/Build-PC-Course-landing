@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+      - name: Configure Git
+         run:
+          git config --global user.email "elshanamazov@gmail.com"
+          git config --global user.name "elshanamazov"
 
       - name: Install Node.js
         uses: actions/setup-node@v2
