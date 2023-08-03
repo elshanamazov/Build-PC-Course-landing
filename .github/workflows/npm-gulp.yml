@@ -35,5 +35,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./app # Замените на путь к собранному проекту
-          publish_branch: gh-pages # Замените на ветку, в которую будет производиться деплой
+          publish_branch: main # Замените на ветку, в которую будет производиться деплой
           enable_jekyll: false # Установите в true, если используете Jekyll в вашем проекте
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
