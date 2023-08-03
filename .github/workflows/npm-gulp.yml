@@ -16,7 +16,7 @@ jobs:
       - name: Configure Git
         run:
           git config --global user.email "elshanamazov@gmail.com"
-          git config --global user.name "elshanamazov"
+          git config --global user.name "Elshanamazov"
 
       - name: Install Node.js
         uses: actions/setup-node@v2
