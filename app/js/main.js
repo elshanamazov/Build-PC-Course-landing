@@ -1,1 +1,33 @@
-(()=>{const e=document.querySelector(".js-body"),t=document.querySelector(".js-burger"),c=document.querySelector(".js-nav"),o=document.querySelectorAll(".js-nav a");t.addEventListener("click",(function(){t.classList.toggle("_active"),c.classList.toggle("_active"),e.classList.toggle("body--lock")})),o.forEach((e=>{e.addEventListener("click",(t=>{t.preventDefault(),function(e){const t=document.getElementById(e);t&&t.scrollIntoView({behavior:"smooth",block:"start"})}(e.getAttribute("href").substr(1))}))}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+const body = document.querySelector(".js-body");
+const burger = document.querySelector(".js-burger");
+const openMenu = document.querySelector(".js-nav");
+const scrollLinks = document.querySelectorAll(".js-nav a");
+burger.addEventListener("click", function () {
+  burger.classList.toggle("_active");
+  openMenu.classList.toggle("_active");
+  body.classList.toggle("body--lock");
+});
+function scrollToBlock(id) {
+  const block = document.getElementById(id);
+  if (block) {
+    block.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+}
+scrollLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const blockId = link.getAttribute("href").substr(1);
+    scrollToBlock(blockId);
+  });
+});
+/******/ })()
+;
+//# sourceMappingURL=main.js.map
