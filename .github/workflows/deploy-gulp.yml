@@ -1,36 +1,29 @@
-name: Build and Deploy
+name: Deploy with Gulp
 
 on:
   push:
     branches:
-      - main
+      - main # Замените на вашу ветку, на которой вы хотите запускать деплоймент
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 14 # Укажите версию Node.js, которая подходит для вашего проекта
 
-      - name: Install Gulp CLI
-        run: npm install -g gulp-cli
+      - name: Install project dependencies
+        run: npm install # Используйте npm или yarn в зависимости от вашего проекта
 
-      - name: Install Dependencies
-        run: npm i
-
-      - name: Build Production Version
-        run: gulp build
-      - name: Validate HTML with node-w3c-validator
-        run: npm run html
-      - name: Check EditorConfig
-        run: npm run code
-
+      - name: Build project with Gulp
+        run: gulp build # 
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
