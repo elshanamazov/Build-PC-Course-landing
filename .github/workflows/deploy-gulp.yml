@@ -29,10 +29,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./app 
-
+          
       - name: Get Deployment URL
         id: get_url
         run: echo "::set-output name=url::https://$GITHUB_REPOSITORY.github.io/"
 
       - name: Display Deployed Link
-        run: echo "Your project is now deployed at: ${{ steps.get_url.outputs.url }}"
+        run: echo "Your project is now deployed at:${{ steps.get_url.outputs.url }}"
