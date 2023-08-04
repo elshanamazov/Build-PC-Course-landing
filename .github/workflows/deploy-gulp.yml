@@ -1,4 +1,4 @@
-name: Deploy with Gulp
+name: Deploy with Gulpa
 
 on:
   push:
