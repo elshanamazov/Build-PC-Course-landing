@@ -26,7 +26,8 @@ jobs:
 
       - name: Build Production Version
         run: gulp build
-
+      - name: Validate HTML with node-w3c-validator
+        run: npm run html
       - name: Check EditorConfig
         run: npm run code
 
